@@ -1,0 +1,11 @@
+{
+  "name": "emis-incident",
+  "title": "EMIS - Incident",
+  "url": "https://emis-incident.herokuapp.com/v1",
+  "sampleUrl": "https://emis-incident.herokuapp.com/v1",
+  "template":
+  {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}

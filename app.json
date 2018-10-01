@@ -1,0 +1,29 @@
+{
+  "name": "emis-incident",
+  "description": "WIP",
+  "repository": "https://github.com/CodeTanzania/emis-incident.git",
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "emis-module",
+    "incident",
+    "type",
+    "hazard",
+    "emergency",
+    "risk"
+  ],
+  "addons": [
+    "mongolab"
+  ],
+  "env":
+  {
+    "NPM_CONFIG_PRODUCTION":
+    {
+      "value": "false"
+    },
+    "YARN_PRODUCTION":
+    {
+      "value": "false"
+    }
+  }
+}
