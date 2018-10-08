@@ -4,7 +4,11 @@
 [![Dependencies Status](https://david-dm.org/CodeTanzania/emis-incident/status.svg?style=flat-square)](https://david-dm.org/CodeTanzania/emis-incident)
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/CodeTanzania/emis-incident/tree/develop)
 
-> WIP
+A representation of an entity which define and track an instance(or occurrence) of an emergency(or disaster) event.
+
+## Domain Model
+
+![EMIS Incident Domain Model](https://raw.githubusercontent.com/CodeTanzania/emis-incident/develop/specifications/incidentv0.1.0.png)
 
 ## Requirements
 
@@ -56,7 +60,7 @@ It will be nice, if you open an issue first so that we can know what is going on
 ## References
 - [Disaster](https://en.wikipedia.org/wiki/Disaster)
 
-## Licence
+## License
 
 The MIT License (MIT)
 

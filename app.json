@@ -1,16 +1,22 @@
 {
   "name": "emis-incident",
-  "description": "WIP",
+  "description": "A representation of an entity which define and track an instance(or occurrence) of an emergency(or disaster) event.",
   "repository": "https://github.com/CodeTanzania/emis-incident.git",
   "keywords": [
     "codetanzania",
     "emis",
     "emis-module",
-    "incident",
-    "type",
+    "disaster",
     "hazard",
+    "risk",
     "emergency",
-    "risk"
+    "incident",
+    "activation",
+    "execution",
+    "action",
+    "task",
+    "stakeholder",
+    "assessment"
   ],
   "addons": [
     "mongolab"
