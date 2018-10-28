@@ -8,7 +8,7 @@ A representation of an entity which define and track an instance(or occurrence) 
 
 ## Domain Model
 
-![EMIS Incident Domain Model](https://raw.githubusercontent.com/CodeTanzania/emis-incident/develop/specifications/incidentv0.1.0.png)
+![EMIS Incident Domain Model](https://raw.githubusercontent.com/CodeTanzania/emis-incident/develop/specifications/incident.model.png)
 
 ## Requirements
 

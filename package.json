@@ -43,15 +43,44 @@
   "homepage": "https://github.com/CodeTanzania/emis-incident",
   "sandbox": {
     "url": "https://emis-incident.herokuapp.com",
-    "apiDoc": "https://codetanzania.github.io/emis-incident/",
+    "apidoc": "https://lykmapipo.github.io/plan/",
     "client_id": "",
     "client_secret": "",
     "urls": [
       {
-        "resource": "IncidentType",
+        "resource": "Incident",
+        "schema": "https://emis-incident.herokuapp.com/v1/incidents/schema",
         "link": "https://emis-incident.herokuapp.com/v1/incidents",
         "scopes": [
           "incident:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
+        "resource": "Action",
+        "schema": "https://emis-incident.herokuapp.com/v1/actions/schema",
+        "link": "https://emis-incident.herokuapp.com/v1/actions",
+        "scopes": [
+          "action:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
+        "resource": "Task",
+        "schema": "https://emis-incident.herokuapp.com/v1/tasks/schema",
+        "link": "https://emis-incident.herokuapp.com/v1/tasks",
+        "scopes": [
+          "task:*"
         ],
         "methods": [
           "get",
@@ -72,23 +101,25 @@
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "mocha": "^5.2.0",
-    "mongoose": "^5.3.2",
-    "sinon": "^6.3.5",
+    "mongoose": "^5.3.7",
+    "sinon": "^7.1.0",
     "sinon-chai": "^3.2.0",
     "sinon-mongoose": "^2.2.1",
     "superagent": "^4.0.0-beta.5",
     "supertest": "^3.3.0"
   },
   "dependencies": {
-    "@codetanzania/majifix-common": "^0.11.0",
+    "@codetanzania/emis-incident-type": "^1.0.1",
+    "@codetanzania/majifix-common": "^0.11.1",
     "@lykmapipo/env": "^0.3.1",
-    "@lykmapipo/express-common": "^0.9.1",
+    "@lykmapipo/express-common": "^0.9.2",
     "async": "^2.6.1",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
-    "mongoose-locale-schema": "^0.2.0",
-    "mongoose-rest-actions": "^0.18.0",
+    "mongoose-locale-schema": "^0.2.1",
+    "mongoose-rest-actions": "^0.18.2",
+    "mongoose-schema-jsonschema": "^1.1.15",
     "randomcolor": "^0.5.3"
   },
   "engines": {
