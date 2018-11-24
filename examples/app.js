@@ -11,7 +11,11 @@ const path = require('path');
 const _ = require('lodash');
 const async = require('async');
 const mongoose = require('mongoose');
-const { IncidentType } = require('@codetanzania/emis-incident-type');
+const {
+  IncidentType,
+  incidentTypeRouter
+} =
+require('@codetanzania/emis-incident-type');
 const {
   Incident,
   Action,
@@ -19,6 +23,7 @@ const {
   info,
   app
 } = require(path.join(__dirname, '..'));
+app.mount(incidentTypeRouter);
 
 
 /* establish mongodb connection */
@@ -47,19 +52,12 @@ function boot() {
       });
     },
 
-    function clearIncidentTypes(next) {
-      IncidentType.deleteMany(function ( /*error, results*/ ) {
-        next();
-      });
-    },
-
     function seedIncidentTypes(next) {
-      const incidentTypes = IncidentType.fake(20);
-      IncidentType.insertMany(incidentTypes, next);
+      IncidentType.seed(next);
     },
 
     function seedIncidents(incidentTypes, next) {
-      const incidents = Incident.fake(20);
+      const incidents = Incident.fake(incidentTypes.length);
       _.forEach(incidentTypes, function (incidentType, index) {
         incidents[index].incidentType = incidentType;
       });
@@ -67,7 +65,7 @@ function boot() {
     },
 
     function seedActions(incidents, next) {
-      const actions = Action.fake(20);
+      const actions = Action.fake(incidents.length);
       _.forEach(incidents, function (incident, index) {
         actions[index].incident = incident;
       });
@@ -75,7 +73,7 @@ function boot() {
     },
 
     function seedTasks(actions, next) {
-      const tasks = Task.fake(20);
+      const tasks = Task.fake(actions.length);
       _.forEach(actions, function (action, index) {
         tasks[index].action = action;
         tasks[index].number = (index % 2) + 1;
