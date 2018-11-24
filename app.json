@@ -19,7 +19,8 @@
     "assessment"
   ],
   "addons": [
-    "mongolab"
+    "mongolab",
+    "heroku-redis"
   ],
   "env":
   {

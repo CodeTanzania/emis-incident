@@ -110,17 +110,25 @@
   "dependencies": {
     "@codetanzania/emis-feature": "^1.0.1",
     "@codetanzania/emis-incident-type": "^1.2.0",
+    "@codetanzania/emis-resource": "^1.0.0",
+    "@codetanzania/emis-role": "^1.0.4",
+    "@codetanzania/emis-stakeholder": "^1.1.1",
     "@codetanzania/majifix-common": "^0.11.1",
     "@lykmapipo/env": "^0.3.2",
     "@lykmapipo/express-common": "^0.9.3",
+    "@lykmapipo/permission": "^0.4.1",
     "async": "^2.6.1",
     "express": "^4.16.4",
+    "kue": "^0.11.6",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
+    "mongoose-geojson-schemas": "^0.8.2",
+    "mongoose-kue": "^0.7.1",
     "mongoose-locale-schema": "^0.2.1",
     "mongoose-rest-actions": "^0.20.2",
     "mongoose-schema-jsonschema": "^1.1.15",
-    "randomcolor": "^0.5.3"
+    "randomcolor": "^0.5.3",
+    "redis": "^2.8.0"
   },
   "engines": {
     "node": ">=8.11.1",
