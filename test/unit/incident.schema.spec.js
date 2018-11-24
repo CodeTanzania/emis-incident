@@ -68,6 +68,16 @@ describe('Incident Schema', () => {
     expect(startedAt.options.fake).to.exist;
   });
 
+  it('should have epicentre field', () => {
+    const epicentre = Incident.path('epicentre');
+    const type = Incident.path('epicentre.type');
+    const coordinates = Incident.path('epicentre.coordinates');
+
+    expect(epicentre).to.exist;
+    expect(type).to.be.instanceof(Schema.Types.String);
+    expect(coordinates).to.be.instanceof(Schema.Types.Array);
+  });
+
   it('should have endedAt field', () => {
     const endedAt = Incident.path('endedAt');
 
