@@ -108,6 +108,7 @@
     "supertest": "^3.3.0"
   },
   "dependencies": {
+    "@codetanzania/emis-alert": "^1.2.0",
     "@codetanzania/emis-feature": "^1.0.1",
     "@codetanzania/emis-incident-type": "^1.2.0",
     "@codetanzania/emis-resource": "^1.0.0",
@@ -117,11 +118,13 @@
     "@lykmapipo/env": "^0.3.2",
     "@lykmapipo/express-common": "^0.9.3",
     "@lykmapipo/permission": "^0.4.1",
+    "@lykmapipo/postman": "^0.5.1",
     "async": "^2.6.1",
     "express": "^4.16.4",
     "kue": "^0.11.6",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
+    "moment-timezone": "^0.5.23",
     "mongoose-geojson-schemas": "^0.8.2",
     "mongoose-kue": "^0.7.1",
     "mongoose-locale-schema": "^0.2.1",
