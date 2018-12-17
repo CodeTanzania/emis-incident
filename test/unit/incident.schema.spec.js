@@ -2,44 +2,87 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
+const { include } = require('@lykmapipo/include');
 const { Schema } = require('mongoose');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
-const Incident =
-  require(path.join(__dirname, '..', '..', 'lib', 'incident.model'));
+const { Plan } = require('@codetanzania/emis-plan');
+const Incident = include(__dirname, '..', '..', 'lib', 'incident.model');
 
 
 describe('Incident Schema', () => {
 
-  it('should have incidentType field', () => {
-    const incidentType = Incident.path('incidentType');
+  it('should have type field', () => {
+    const type = Incident.path('type');
 
-    expect(incidentType).to.exist;
-    expect(incidentType).to.be.instanceof(Schema.Types.ObjectId);
-    expect(incidentType.options).to.exist;
-    expect(incidentType.options).to.be.an('object');
-    expect(incidentType.options.type).to.exist;
-    expect(incidentType.options.required).to.be.true;
-    expect(incidentType.options.ref).to.exist;
-    expect(incidentType.options.ref).to.be.equal(IncidentType.MODEL_NAME);
-    expect(incidentType.options.index).to.be.true;
-    expect(incidentType.options.autopopulate).to.exist;
+    expect(type).to.exist;
+    expect(type).to.be.instanceof(Schema.Types.ObjectId);
+    expect(type.options).to.exist;
+    expect(type.options).to.be.an('object');
+    expect(type.options.type).to.exist;
+    expect(type.options.required).to.be.true;
+    expect(type.options.ref).to.exist;
+    expect(type.options.ref).to.be.equal(IncidentType.MODEL_NAME);
+    expect(type.options.index).to.be.true;
+    expect(type.options.autopopulate).to.exist;
   });
 
-  it('should have name field', () => {
-    const name = Incident.path('name');
+  it('should have plan field', () => {
+    const plan = Incident.path('plan');
 
-    expect(name).to.exist;
-    expect(name).to.be.instanceof(Schema.Types.String);
-    expect(name.options).to.exist;
-    expect(name.options).to.be.an('object');
-    expect(name.options.type).to.exist;
-    expect(name.options.trim).to.be.true;
-    expect(name.options.required).to.be.true;
-    expect(name.options.index).to.be.true;
-    expect(name.options.searchable).to.be.true;
-    expect(name.options.fake).to.exist;
+    expect(plan).to.exist;
+    expect(plan).to.be.instanceof(Schema.Types.ObjectId);
+    expect(plan.options).to.exist;
+    expect(plan.options).to.be.an('object');
+    expect(plan.options.type).to.exist;
+    expect(plan.options.ref).to.exist;
+    expect(plan.options.ref).to.be.equal(Plan.MODEL_NAME);
+    expect(plan.options.index).to.be.true;
+    expect(plan.options.autopopulate).to.exist;
+  });
+
+  it('should have number field', () => {
+    const number = Incident.path('number');
+
+    expect(number).to.exist;
+    expect(number).to.be.instanceof(Schema.Types.String);
+    expect(number.options).to.exist;
+    expect(number.options).to.be.an('object');
+    expect(number.options.type).to.exist;
+    expect(number.options.trim).to.be.true;
+    expect(number.options.index).to.be.true;
+    expect(number.options.unique).to.be.true;
+    expect(number.options.searchable).to.be.true;
+    expect(number.options.fake).to.exist;
+  });
+
+  it('should have event field', () => {
+    const event = Incident.path('event');
+
+    expect(event).to.exist;
+    expect(event).to.be.instanceof(Schema.Types.String);
+    expect(event.options).to.exist;
+    expect(event.options).to.be.an('object');
+    expect(event.options.type).to.exist;
+    expect(event.options.trim).to.be.true;
+    expect(event.options.required).to.be.true;
+    expect(event.options.index).to.be.true;
+    expect(event.options.searchable).to.be.true;
+    expect(event.options.fake).to.exist;
+  });
+
+  it('should have causes field', () => {
+    const causes = Incident.path('causes');
+
+    expect(causes).to.exist;
+    expect(causes).to.be.instanceof(Schema.Types.Array);
+    expect(causes.options).to.exist;
+    expect(causes.options).to.be.an('object');
+    expect(causes.options.type).to.exist;
+    expect(causes.options.trim).to.be.true;
+    expect(causes.options.index).to.be.true;
+    expect(causes.options.searchable).to.be.true;
+    expect(causes.options.fake).to.exist;
   });
 
   it('should have description field', () => {
@@ -68,6 +111,21 @@ describe('Incident Schema', () => {
     expect(startedAt.options.fake).to.exist;
   });
 
+  it('should have areas field', () => {
+    const areas = Incident.path('areas');
+
+    expect(areas).to.exist;
+    expect(areas).to.be.instanceof(Schema.Types.Array);
+    expect(areas.options).to.exist;
+    expect(areas.options).to.be.an('object');
+    expect(areas.options.type).to.exist;
+    expect(areas.options.trim).to.be.true;
+    expect(areas.options.required).to.be.true;
+    expect(areas.options.index).to.be.true;
+    expect(areas.options.searchable).to.be.true;
+    expect(areas.options.fake).to.exist;
+  });
+
   it('should have epicentre field', () => {
     const epicentre = Incident.path('epicentre');
     const type = Incident.path('epicentre.type');
@@ -76,6 +134,20 @@ describe('Incident Schema', () => {
     expect(epicentre).to.exist;
     expect(type).to.be.instanceof(Schema.Types.String);
     expect(coordinates).to.be.instanceof(Schema.Types.Array);
+  });
+
+  it('should have remarks field', () => {
+    const remarks = Incident.path('remarks');
+
+    expect(remarks).to.exist;
+    expect(remarks).to.be.instanceof(Schema.Types.Array);
+    expect(remarks.options).to.exist;
+    expect(remarks.options).to.be.an('object');
+    expect(remarks.options.type).to.exist;
+    expect(remarks.options.trim).to.be.true;
+    expect(remarks.options.index).to.be.true;
+    expect(remarks.options.searchable).to.be.true;
+    expect(remarks.options.fake).to.exist;
   });
 
   it('should have endedAt field', () => {
