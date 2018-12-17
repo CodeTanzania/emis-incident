@@ -59,7 +59,7 @@ function boot() {
     function seedIncidents(incidentTypes, next) {
       const incidents = Incident.fake(incidentTypes.length);
       _.forEach(incidentTypes, function (incidentType, index) {
-        incidents[index].incidentType = incidentType;
+        incidents[index].type = incidentType;
       });
       Incident.insertMany(incidents, next);
     },
