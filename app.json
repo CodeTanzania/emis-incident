@@ -1,0 +1,36 @@
+{
+  "name": "emis-incident",
+  "description": "A representation of an entity which define and track an instance(or occurrence) of an emergency(or disaster) event.",
+  "repository": "https://github.com/CodeTanzania/emis-incident.git",
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "emis-module",
+    "disaster",
+    "hazard",
+    "risk",
+    "emergency",
+    "incident",
+    "activation",
+    "execution",
+    "action",
+    "task",
+    "stakeholder",
+    "assessment"
+  ],
+  "addons": [
+    "mongolab",
+    "heroku-redis"
+  ],
+  "env":
+  {
+    "NPM_CONFIG_PRODUCTION":
+    {
+      "value": "false"
+    },
+    "YARN_PRODUCTION":
+    {
+      "value": "false"
+    }
+  }
+}
