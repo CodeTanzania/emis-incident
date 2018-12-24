@@ -2,10 +2,9 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
-const Action =
-  require(path.join(__dirname, '..', '..', 'lib', 'action.model'));
+const { include } = require('@lykmapipo/include');
+const { Action } = include(__dirname, '..', '..');
 
 describe('Action Statics', () => {
 

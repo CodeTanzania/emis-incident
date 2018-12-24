@@ -2,14 +2,11 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
+const { include } = require('@lykmapipo/include');
 const { Schema } = require('mongoose');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
-const Incident =
-  require(path.join(__dirname, '..', '..', 'lib', 'incident.model'));
-const Action =
-  require(path.join(__dirname, '..', '..', 'lib', 'action.model'));
+const { Action, Incident } = include(__dirname, '..', '..');
 
 
 describe('Action Schema', () => {

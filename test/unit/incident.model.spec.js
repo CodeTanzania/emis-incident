@@ -2,10 +2,9 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
-const Incident =
-  require(path.join(__dirname, '..', '..', 'lib', 'incident.model'));
+const { include } = require('@lykmapipo/include');
+const { Incident } = include(__dirname, '..', '..');
 
 describe('Incident Statics', () => {
 

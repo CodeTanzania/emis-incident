@@ -2,10 +2,9 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
-const Task =
-  require(path.join(__dirname, '..', '..', 'lib', 'task.model'));
+const { include } = require('@lykmapipo/include');
+const { Task } = include(__dirname, '..', '..');
 
 describe('Task Statics', () => {
 
