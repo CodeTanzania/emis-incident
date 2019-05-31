@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
@@ -8,9 +7,7 @@ const { Schema } = require('mongoose');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
 const { Task, Action, Incident } = include(__dirname, '..', '..');
 
-
 describe('Task Schema', () => {
-
   it('should have incidentType field', () => {
     const incidentType = Action.path('incidentType');
 
@@ -115,5 +112,4 @@ describe('Task Schema', () => {
     expect(number.options.index).to.be.true;
     expect(number.options.fake).to.exist;
   });
-
 });

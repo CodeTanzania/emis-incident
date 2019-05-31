@@ -1,6 +1,5 @@
 'use strict';
 
-
 /**
  * @module Incident
  * @name Incident
@@ -21,7 +20,6 @@
  *
  */
 
-
 /* dependencies */
 const _ = require('lodash');
 const { include } = require('@lykmapipo/include');
@@ -34,7 +32,6 @@ const incidentRouter = include(__dirname, 'lib', 'incident.http.router');
 const actionRouter = include(__dirname, 'lib', 'action.http.router');
 const taskRouter = include(__dirname, 'lib', 'task.http.router');
 
-
 /**
  * @name info
  * @description package information
@@ -44,11 +41,20 @@ const taskRouter = include(__dirname, 'lib', 'task.http.router');
  * @since 1.0.0
  * @version 0.1.0
  */
-exports.info = _.merge({}, _.pick(pkg, [
-  'name', 'description', 'version', 'license',
-  'homepage', 'repository', 'bugs', 'sandbox', 'contributors'
-]));
-
+exports.info = _.merge(
+  {},
+  _.pick(pkg, [
+    'name',
+    'description',
+    'version',
+    'license',
+    'homepage',
+    'repository',
+    'bugs',
+    'sandbox',
+    'contributors',
+  ])
+);
 
 /**
  * @name Incident
@@ -61,7 +67,6 @@ exports.info = _.merge({}, _.pick(pkg, [
  */
 exports.Incident = Incident;
 
-
 /**
  * @name Action
  * @description Action model
@@ -72,7 +77,6 @@ exports.Incident = Incident;
  * @version 0.1.0
  */
 exports.Action = Action;
-
 
 /**
  * @name Task
@@ -85,7 +89,6 @@ exports.Action = Action;
  */
 exports.Task = Task;
 
-
 /**
  * @name incidentRouter
  * @description incident http router
@@ -96,7 +99,6 @@ exports.Task = Task;
  * @version 0.1.0
  */
 exports.incidentRouter = incidentRouter;
-
 
 /**
  * @name actionRouter
@@ -109,7 +111,6 @@ exports.incidentRouter = incidentRouter;
  */
 exports.actionRouter = actionRouter;
 
-
 /**
  * @name taskRouter
  * @description task http router
@@ -120,7 +121,6 @@ exports.actionRouter = actionRouter;
  * @version 0.1.0
  */
 exports.taskRouter = taskRouter;
-
 
 /**
  * @name apiVersion
@@ -133,7 +133,6 @@ exports.taskRouter = taskRouter;
  */
 exports.apiVersion = incidentRouter.apiVersion;
 
-
 /* export app */
 Object.defineProperty(exports, 'app', {
   get() {
@@ -142,5 +141,5 @@ Object.defineProperty(exports, 'app', {
     app.mount(actionRouter);
     app.mount(taskRouter);
     return app;
-  }
+  },
 });

@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
@@ -9,9 +8,7 @@ const { IncidentType } = require('@codetanzania/emis-incident-type');
 const { Plan } = require('@codetanzania/emis-plan');
 const Incident = include(__dirname, '..', '..', 'lib', 'incident.model');
 
-
 describe('Incident Schema', () => {
-
   it('should have type field', () => {
     const type = Incident.path('type');
 
@@ -161,5 +158,4 @@ describe('Incident Schema', () => {
     expect(endedAt.options.index).to.be.true;
     expect(endedAt.options.fake).to.exist;
   });
-
 });
