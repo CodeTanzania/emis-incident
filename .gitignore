@@ -32,3 +32,5 @@ config
 
 # Editor specific configs
 .nvimrc
+.vscode
+.idea
